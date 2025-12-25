@@ -3,6 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 import httpx
 import os
 from dotenv import load_dotenv
+import uvicorn
 
 load_dotenv()
 
@@ -51,3 +52,9 @@ async def verify_payment(reference: str):
             f"https://api.paystack.co/charge/{reference}", headers=HEADERS
         )
         return response.json()
+
+
+if __name__ == "__main__":
+    import uvicorn
+
+    uvicorn.run(app, host="0.0.0.0", port=8000)
