@@ -12,7 +12,7 @@ app = FastAPI()
 # Enable CORS for Lovable
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["savage-ai.lovable.app"],
+    allow_origins=["https://savage-ai.lovable.app"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
